@@ -139,7 +139,7 @@ with tab_1:
         )
 
         
-]
+
         full_message = (
         ai_role
         + ai_textstyle
