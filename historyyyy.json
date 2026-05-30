@@ -1,0 +1,10 @@
+[
+    {
+        "role": "user",
+        "content": "when did pubg mobile release?"
+    },
+    {
+        "role": "assistant",
+        "content": "PUBG Mobile launched in China on December\u202f20,\u202f2018, worldwide on March\u202f20,\u202f2019."
+    }
+]
