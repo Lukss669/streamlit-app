@@ -2,7 +2,7 @@ streamlit
 python-dotenv
 openai
 requests
-
+gtts
 
 
 
