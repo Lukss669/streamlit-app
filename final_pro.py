@@ -6,6 +6,20 @@ import streamlit as st
 from gtts import gTTS
 import io
 
+import streamlit as st
+
+st.markdown("""
+<style>
+.stApp {
+    background-image: url("https://images.unsplash.com/photo-1542751371-adc38448a05e");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+</style>
+""", unsafe_allow_html=True)
+
 tab_1, tab_2, tab_3 = st.tabs(
     ["Chat", "Playback Bar", "History"]
 )
