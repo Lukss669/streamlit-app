@@ -125,7 +125,7 @@ with tab_1:
         lang_instruction = "Answer only in English."
 
     system_prompt = f"""
-    You are a gaming expert for {game}.
+    You are a gaming expert for {subject}.
     {lang_instruction}
     """
 
