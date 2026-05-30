@@ -117,17 +117,17 @@ with tab_1:
     language = st.selectbox(
     "აირჩიე ენა",
     ["ქართული", "English"]
-)
+    )
 
     if language == "ქართული":
-    lang_instruction = "უპასუხე მხოლოდ ქართულ ენაზე."
-else:
-    lang_instruction = "Answer only in English."
+        lang_instruction = "უპასუხე მხოლოდ ქართულ ენაზე."
+    else:
+        lang_instruction = "Answer only in English."
 
-system_prompt = f"""
-You are a gaming expert for {game}.
-{lang_instruction}
-"""
+    system_prompt = f"""
+    You are a gaming expert for {game}.
+    {lang_instruction}
+    """
 
     if st.button("Send"):
 
