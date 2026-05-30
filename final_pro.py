@@ -120,10 +120,8 @@ with tab_1:
     )
 
     if language == "ქართული":
-        tts_lang = "ka"
         lang_instruction = "უპასუხე მხოლოდ ქართულად, გამართული და ბუნებრივი ქართულით."
     else:
-        tts_lang = "en"
         lang_instruction = "Answer only in English."
 
     system_prompt = f"""
@@ -140,16 +138,11 @@ with tab_1:
             }
         )
 
-        language_prompt = [
-    {
-        "role": "system",
-        "content": lang_instruction
-    }
+        
 ]
         full_message = (
         ai_role
         + ai_textstyle
-        + language_prompt
         + st.session_state.history
 )
         
@@ -183,7 +176,7 @@ with tab_2:
 
         tts = gTTS(
             text=st.session_state.response_text,
-            lang=tts_lang
+            lang="en"
         )
 
         audio_bytes = io.BytesIO()
