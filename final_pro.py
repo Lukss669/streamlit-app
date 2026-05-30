@@ -120,8 +120,10 @@ with tab_1:
     )
 
     if language == "ქართული":
-        lang_instruction = "უპასუხე მხოლოდ ქართულ ენაზე."
+        tts_lang = "ka"
+        lang_instruction = "უპასუხე მხოლოდ ქართულად, გამართული და ბუნებრივი ქართულით."
     else:
+        tts_lang = "en"
         lang_instruction = "Answer only in English."
 
     system_prompt = f"""
@@ -138,7 +140,18 @@ with tab_1:
             }
         )
 
-        full_message = ai_role + ai_textstyle + st.session_state.history
+        language_prompt = [
+    {
+        "role": "system",
+        "content": lang_instruction
+    }
+]
+        full_message = (
+        ai_role
+        + ai_textstyle
+        + language_prompt
+        + st.session_state.history
+)
         
 
         response = client.responses.create(
@@ -170,7 +183,7 @@ with tab_2:
 
         tts = gTTS(
             text=st.session_state.response_text,
-            lang="en"
+            lang=tts_lang
         )
 
         audio_bytes = io.BytesIO()
@@ -189,7 +202,7 @@ with tab_3:
     st.header("Chat History")
 
     for message in st.session_state.history:
-        st.write(f"{message["role"]}, {message["content"]}")
+        st.write(f"{message['role']}: {message['content']}")
 
 
 
